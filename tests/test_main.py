@@ -2,7 +2,7 @@
 
 import pytest
 
-from fizzbuzz.main import fizz_buzz, hello_world
+from fizzbuzz.main import fizz_buzz, generate_fizz_buzz_string, hello_world
 
 
 @pytest.mark.parametrize(("number"), [(1), (2)])
@@ -13,17 +13,14 @@ def test_hello_world(number):
 
 @pytest.mark.parametrize(("number"), [(1), (2), (7), (19)])
 def test_regular_number_returns_the_number(number):
-    fizz_result = fizz_buzz()
-    result = fizz_result.split("\n")
+    result = fizz_buzz()
     assert result[number - 1] == str(number)
 
 @pytest.mark.parametrize(("number"), [(3), (30), (42), (90)])
 def test_multiple_of_3_returns_fizz(number):
-    fizz_result = fizz_buzz()
-    result = fizz_result.split("\n")
+    result = fizz_buzz()
     assert result[number - 1] == "fizz"
 
 def test_fizz_buzz_returns_100_numbers():
-    fizz_result = fizz_buzz()
-    result = fizz_result.split("\n")
+    result = generate_fizz_buzz_string().split("\n")
     assert len(result) == 100

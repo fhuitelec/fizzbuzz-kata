@@ -19,16 +19,24 @@ def hello_world() -> str:
     """Entrypoint for FizzBuzz."""
     return "Hello world!"
 
-def _fizz_buzz(number: int) -> str:
+def _single_fizz_buzz(number: int) -> str:
     if number % 3 == 0:
         return "fizz"
 
     return str(number)
 
-def fizz_buzz() -> str:
-    result = ""
+def fizz_buzz() -> list[str]:
+    result = []
     for number in range(1, 100):
-        result += _fizz_buzz(number) + "\n"
+        result.append(_single_fizz_buzz(number))
+
+    return result
+
+
+def generate_fizz_buzz_string() -> str:
+    result = ""
+    for number in fizz_buzz():
+        result += number + "\n"
 
     return result
 
