@@ -22,6 +22,12 @@ def hello_world() -> str:
 def fizz_buzz(number: int) -> str:
     return str(number)
 
+def print_fizz_buzz() -> list[str]:
+    result = []
+    for number in range(1, 101):
+        result.append(number)
+
+    return result
 
 
 def app() -> None:  # pragma: no cover

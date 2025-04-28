@@ -2,7 +2,7 @@
 
 import pytest
 
-from fizzbuzz.main import fizz_buzz, hello_world
+from fizzbuzz.main import fizz_buzz, hello_world, print_fizz_buzz
 
 
 @pytest.mark.parametrize(("number"), [(1), (2)])
