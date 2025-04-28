@@ -12,32 +12,31 @@ def test_hello_world(number):
     assert number == number  # pylint: disable=comparison-with-itself
 
 
-@pytest.mark.parametrize(("number"), [(1), (2), (7), (19)])
-def test_regular_number_returns_the_number(number):
+@pytest.mark.parametrize(
+    ("number", "expected"),
+    [
+        (1, "1"),
+        (2, "2"),
+        (3, "fizz"),
+        (5, "buzz"),
+        (7, "7"),
+        (15, "fizzbuzz"),
+        (19, "19"),
+        (25, "buzz"),
+        (27, "fizz"),
+        (30, "fizzbuzz"),
+        (42, "fizz"),
+        (50, "buzz"),
+        (60, "fizzbuzz"),
+        (65, "buzz"),
+        (90, "fizzbuzz"),
+        (93, "fizz"),
+    ],
+)
+def test_fizz_buzz(number: int, expected: str):
     """Test."""
     result = fizz_buzz()
-    assert result[number - 1] == str(number)
-
-
-@pytest.mark.parametrize(("number"), [(3), (27), (42), (93)])
-def test_multiple_of_3_returns_fizz(number):
-    """Test."""
-    result = fizz_buzz()
-    assert result[number - 1] == "fizz"
-
-
-@pytest.mark.parametrize(("number"), [(5), (25), (50), (65)])
-def test_multiple_of_5_returns_fizz(number):
-    """Test."""
-    result = fizz_buzz()
-    assert result[number - 1] == "buzz"
-
-
-@pytest.mark.parametrize(("number"), [(15), (30), (60), (90)])
-def test_multiple_of_15_returns_fizzbuzz(number):
-    """Test."""
-    result = fizz_buzz()
-    assert result[number - 1] == "fizzbuzz"
+    assert result[number - 1] == expected
 
 
 def test_fizz_buzz_returns_100_numbers():
