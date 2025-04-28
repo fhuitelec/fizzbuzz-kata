@@ -19,7 +19,9 @@ def hello_world() -> str:
     """Entrypoint for FizzBuzz."""
     return "Hello world!"
 
+
 def _single_fizz_buzz(number: int) -> str:
+    """Calculate fizz buzz for a single number."""
     if number % 3 == 0:
         return "fizz"
 
@@ -28,7 +30,9 @@ def _single_fizz_buzz(number: int) -> str:
 
     return str(number)
 
+
 def fizz_buzz() -> list[str]:
+    """Calculate fizz buzz for 100 numbers."""
     result = []
     for number in range(1, 100):
         result.append(_single_fizz_buzz(number))
@@ -37,6 +41,7 @@ def fizz_buzz() -> list[str]:
 
 
 def generate_fizz_buzz_string() -> str:
+    """Print the result of fizz buzz."""
     result = ""
     for number in fizz_buzz():
         result += number + "\n"
