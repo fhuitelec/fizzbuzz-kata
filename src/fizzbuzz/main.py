@@ -20,12 +20,15 @@ def hello_world() -> str:
     return "Hello world!"
 
 def _fizz_buzz(number: int) -> str:
+    if number % 3 == 0:
+        return "fizz"
+
     return str(number)
 
 def fizz_buzz() -> str:
     result = ""
     for number in range(1, 100):
-        result += str(number) + "\n"
+        result += _fizz_buzz(number) + "\n"
 
     return result
 
