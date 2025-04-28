@@ -22,6 +22,9 @@ def hello_world() -> str:
 
 def _single_fizz_buzz(number: int) -> str:
     """Calculate fizz buzz for a single number."""
+    if number % 15 == 0:
+        return "fizzbuzz"
+
     if number % 3 == 0:
         return "fizz"
 
