@@ -20,7 +20,7 @@ def hello_world() -> str:
     return "Hello world!"
 
 def fizz_buzz(number: int) -> str:
-    return "1"
+    return str(number)
 
 
 
