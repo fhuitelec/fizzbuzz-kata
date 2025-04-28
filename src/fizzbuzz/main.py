@@ -19,6 +19,10 @@ def hello_world() -> str:
     """Entrypoint for FizzBuzz."""
     return "Hello world!"
 
+def fizz_buzz(number: int) -> str:
+    return "1"
+
+
 
 def app() -> None:  # pragma: no cover
     """Entrypoint for FizzBuzz."""
