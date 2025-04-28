@@ -21,6 +21,11 @@ def test_multiple_of_3_returns_fizz(number):
     result = fizz_buzz()
     assert result[number - 1] == "fizz"
 
+@pytest.mark.parametrize(("number"), [(5), (25), (50), (65)])
+def test_multiple_of_5_returns_fizz(number):
+    result = fizz_buzz()
+    assert result[number - 1] == "buzz"
+
 def test_fizz_buzz_returns_100_numbers():
     result = generate_fizz_buzz_string().split("\n")
     assert len(result) == 100
