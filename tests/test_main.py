@@ -17,6 +17,12 @@ def test_regular_number_returns_the_number(number):
     result = fizz_result.split("\n")
     assert result[number - 1] == str(number)
 
+@pytest.mark.parametrize(("number"), [(3), (30), (42), (90)])
+def test_multiple_of_3_returns_fizz(number):
+    fizz_result = fizz_buzz()
+    result = fizz_result.split("\n")
+    assert result[number - 1] == "fizz"
+
 def test_fizz_buzz_returns_100_numbers():
     fizz_result = fizz_buzz()
     result = fizz_result.split("\n")
