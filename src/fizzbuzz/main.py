@@ -22,10 +22,10 @@ def hello_world() -> str:
 def fizz_buzz(number: int) -> str:
     return str(number)
 
-def print_fizz_buzz() -> list[str]:
-    result = []
-    for number in range(1, 101):
-        result.append(number)
+def print_fizz_buzz() -> str:
+    result = ""
+    for number in range(1, 100):
+        result += str(number) + "\n"
 
     return result
 
