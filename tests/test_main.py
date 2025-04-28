@@ -14,3 +14,7 @@ def test_hello_world(number):
 @pytest.mark.parametrize(("number"), [(1), (2), (7), (19)])
 def test_regular_number_returns_the_number(number):
     assert fizz_buzz(number) == str(number)
+
+def test_print():
+    fizz_result = print_fizz_buzz()
+    assert len(fizz_result ) == 100
