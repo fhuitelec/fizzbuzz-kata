@@ -11,5 +11,6 @@ def test_hello_world(number):
     assert hello_world() == "Hello world!"
     assert number == number  # pylint: disable=comparison-with-itself
 
-def test_regular_number_returns_the_number():
-    assert fizz_buzz(1) == "1"
+@pytest.mark.parametrize(("number"), [(1), (2), (7), (19)])
+def test_regular_number_returns_the_number(number):
+    assert fizz_buzz(number) == str(number)
