@@ -19,10 +19,10 @@ def hello_world() -> str:
     """Entrypoint for FizzBuzz."""
     return "Hello world!"
 
-def fizz_buzz(number: int) -> str:
+def _fizz_buzz(number: int) -> str:
     return str(number)
 
-def print_fizz_buzz() -> str:
+def fizz_buzz() -> str:
     result = ""
     for number in range(1, 100):
         result += str(number) + "\n"
