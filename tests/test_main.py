@@ -15,6 +15,7 @@ def test_hello_world(number):
 def test_regular_number_returns_the_number(number):
     assert fizz_buzz(number) == str(number)
 
-def test_print():
+def test_fizz_buzz_returns_100_numbers():
     fizz_result = print_fizz_buzz()
-    assert len(fizz_result ) == 100
+    result = fizz_result.split("\n")
+    assert len(result) == 100
